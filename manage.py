@@ -13,3 +13,6 @@ if __name__ == '__main__':
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
+
+# 使用python3 manage.py createsuperuser来创建超级管理员
+# 当前用户： bobxiao, 密码： 3699

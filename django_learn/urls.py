@@ -17,7 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from myblog import views
 
+'''
+可以在每个app下独立使用一个urls.py来配置
+'''
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.root_page)
+    path('', views.root_page),
+    path('templates/', views.template_demo)
 ]

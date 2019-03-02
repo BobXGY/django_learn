@@ -54,7 +54,7 @@ ROOT_URLCONF = 'django_learn.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',   # 指定模板引擎，支持第三方的jinja2
         'DIRS': [os.path.join(BASE_DIR, 'templates')]
         ,
         'APP_DIRS': True,
@@ -105,7 +105,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# en-us, zh_Hans, zh_Hant等
+# 不支持zh-cn, zh-tw
+LANGUAGE_CODE = 'zh_Hans'
 
 TIME_ZONE = 'UTC'
 
