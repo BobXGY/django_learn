@@ -1,27 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome</title>
-    <style>
-        p{
-            font-size: 20px;
-            color: cornflowerblue;
-        }
+{% extends 'base.html' %}
 
-    </style>
-</head>
-<body>
-{{ name }}
-<br>
-Hello Template(s)
-<div>
-    <h3>test database</h3>
-    <p>title</p>
-    <div>{{ article.title }}</div>
-    <p>content</p>
-    <div>{{ article.content }}</div>
-    <p>id<span>{{ article.id }}</span></p>
-</div>
-</body>
-</html>
+{% block head %}
+    <title>Welcome</title>
+
+{% endblock %}
+
+{% block body %}
+    <div id="main-wrapper">
+        <div class="page-header">
+            <h1>Bob's Web Page
+                <small>a django project</small>
+            </h1>
+        </div>
+
+        <div id="content-list">
+            <ul class="list-group">
+                {% for foo in article %}
+                    <a href="{{ request.path }}d/{{ foo.id }}" class="list-group-item">
+                        <h4 class="list-group-item-heading">{{ foo.title }}</h4>
+                        <p class="list-group-item-text">{{ foo.content }}</p>
+                    </a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="bs-callout bs-callout-warning" id="callout-navbar-overflow">
+        <h4>Designed by Bob Xiao</h4>
+        <p>2019.2</p>
+    </div>
+
+{% endblock %}

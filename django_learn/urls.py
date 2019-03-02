@@ -23,6 +23,7 @@ from myblog import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.root_page),
-    path('templates/', views.template_demo)
+    path('django_root_page', views.root_page),
+    path('', views.template_demo),
+    path('d/<int:aid>', views.article_d)
 ]
