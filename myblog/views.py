@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.decorators.http import require_GET, require_POST  # 限制请求方式的装饰器
 from . import models
 
 
 # Create your views here.
 
 
+@require_GET
 def root_page(request):
     # 直接返回
     return HttpResponse('Hello django')
@@ -28,3 +30,8 @@ def article_d(request, aid):
         'article': models.Article.objects.get(pk=aid)
     }
     return render(request, 'detail.html', args_dict)
+
+
+def post_demo(req):
+
+    pass
